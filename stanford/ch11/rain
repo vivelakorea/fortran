@@ -1,0 +1,10 @@
+
+      REAL FUNCTION R(M, T)
+          INTEGER M
+          REAL T
+
+          R = 0.1 * T * (M ** 2 + 14 * M + 46)
+          IF (R .LT. 0) R = 0.
+
+          RETURN
+      END
