@@ -1,4 +1,9 @@
-
+      REAL FUNCTION FOO(A, B, C)
+          REAL A, B, C
+          FOO = SQRT(A ** 2 + B ** 2 + C ** 2)
+          RETURN
+      END
+ 
       PROGRAM INPDAT
           INTEGER NMAX, U, N, IOS
           REAL R
@@ -7,7 +12,7 @@
           
           OPEN(U, IOSTAT=IOS, FILE='points.dat', STATUS='OLD')
           IF (IOS .NE. 0) THEN
-              WRITE (*,*) 'FILE POINTS.DAT CANNOT BE OPENED'
+              WRITE (*,*) 'FILE ''points.dat'' CANNOT BE OPENED'
           ENDIF
 
           READ (U, *) N
@@ -19,8 +24,9 @@
           DO 10 I = 1, N
               READ (U, *) X(I), Y(I), Z(I)
               WRITE (*, *) X(I), Y(I), Z(I)
-              WRITE (*,*) NORM(X(I), Y(I), Z(I))
-C              WRITE (*,*) 'NORM IS ', R
+              R = FOO(X(I), Y(I), Z(I))
+              WRITE (*, *) R
+C             WRITE (*,*) 'NORM IS ', R
  10       ENDDO
 
           CLOSE(U)
@@ -29,9 +35,4 @@ C              WRITE (*,*) 'NORM IS ', R
       END
 
 
-C      REAL FUNCTION NORM(X, Y, Z)
-C          REAL X, Y, Z
-C          NORM = REAL(SQRT(X ** 2 + Y ** 2 + Z ** 2))
-C          RETURN
-C      END
           
