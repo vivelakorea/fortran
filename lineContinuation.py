@@ -1,6 +1,6 @@
 from collections import deque
 
-maximum_length = 80
+maximum_length = 72
 
 filename = input("file name : ")
 f = open(filename)
