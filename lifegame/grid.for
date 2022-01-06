@@ -16,11 +16,10 @@ C         SIZE OF GRID
 
 C         INITIAL CONFIGURATION
 
-          CELL(1, 2) = 1
-          CELL(2, 3) = 1
-          CELL(3, 1) = 1
-          CELL(3, 2) = 1
-          CELL(3, 3) = 1
+          CELL(13, 15) = 1
+          CELL(15, 14) = 1
+          CELL(15, 16) = 1
+          CELL(16, 15) = 1
 
           DO 30 I = 1, N
               WRITE(*, 1000) (CELL(I, J), J=1,N)
